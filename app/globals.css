@@ -1,26 +1,83 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ================== GLOBAL ================== */
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #222;
+  margin: 0;
+  padding: 40px;
+  font-family: sans-serif;
+}
+
+/* ================== GRID ================== */
+.grid-wrapper {
+  background: #eee;
+  padding: 20px;
+  border: 4px solid black;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  position: relative;
+}
+
+.cell {
+  border: 1px dashed #999;
+  background: #fafafa;
+}
+
+/* ================== BOX ================== */
+.box {
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.box.blue {
+  background: #3b82f6;
+}
+
+.box.green {
+  background: #22c55e;
+}
+
+/* ================== POSITIONING ================== */
+.absolute {
+  position: absolute;
+  z-index: 10;
+}
+
+/* ================== RESIZE HANDLES ================== */
+.resize {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: yellow;
+  z-index: 20;
+}
+
+.resize.tl {
+  top: -6px;
+  left: -6px;
+  cursor: nwse-resize;
+}
+
+.resize.tr {
+  top: -6px;
+  right: -6px;
+  cursor: nesw-resize;
+}
+
+.resize.bl {
+  bottom: -6px;
+  left: -6px;
+  cursor: nesw-resize;
+}
+
+.resize.br {
+  bottom: -6px;
+  right: -6px;
+  cursor: nwse-resize;
 }
